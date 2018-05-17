@@ -20,15 +20,15 @@ RUN apt-get update --fix-missing
 RUN apt-get install -q -y  wget g++ gcc make zlib1g-dev
 
 RUN \
-  wget "http://downloads.sourceforge.net/project/subread/subread-1.6.1-p2/subread-1.6.1-p2-source.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsubread%2Ffiles%2Fsubread-1.6.1-p2%2F&ts=1461157751&use_mirror=iweb" && \
-  mv subread* subread-1.6.1-p2-source.tar.gz && \
-  tar -xzvf subread-1.6.1-p2-source.tar.gz && \
-  cd subread-1.6.1-p2-source/src && \
+  wget "https://sourceforge.net/projects/subread/files/subread-1.6.1/subread-1.6.1-source.tar.gz" && \
+  mv subread* subread-1.6.1-source.tar.gz && \
+  tar -xzvf subread-1.6.1-source.tar.gz && \
+  cd subread-1.6.1-source/src && \
   make -f Makefile.Linux && \
   mkdir /opt/subread/ && \
   cp -r ../bin/* /opt/subread && \
   cd ../ && \
-  rm -rf subread-1.6.1-p2-source/ subread-1.6.1-p2-source.tar.gz
+  rm -rf subread-1.6.1-source/ subread-1.6.1-source.tar.gz
   
 RUN apt-get remove -q -y zlib1g-dev wget g++ gcc make  \
     && apt-get autoremove -y
