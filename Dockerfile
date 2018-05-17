@@ -1,4 +1,15 @@
 
+#################################################################
+# Dockerfile
+#
+# Version:          1
+# Software:         subread
+# Description:      packe at sourceforge to obtain counts from bam files
+# Website:          https://github.com/isglobal-brge/r4bepanel|https://hub.docker.com/r/lnonell/r4BEpanel
+# Tags:             1.6.1
+# Base Image:       ubuntu
+# Mantainer:        lnonell
+#################################################################
 
 
 FROM ubuntu
